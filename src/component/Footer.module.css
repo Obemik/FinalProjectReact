@@ -205,7 +205,7 @@
 
     .footerMenuColumns {
         flex-direction: column;
-        gap: 0;
+        gap: 16px;
     }
 
     .footerLinkList {

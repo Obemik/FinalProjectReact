@@ -9,7 +9,17 @@ export default function Banner() {
     const [searchQuery, setSearchQuery] = useState('');
 
     const handleSearch = () => {
-        console.log('Searching for:', searchQuery);
+        if (searchQuery.trim()) {
+            navigate(`/properties?search=${encodeURIComponent(searchQuery.trim())}`);
+        } else {
+            navigate('/properties');
+        }
+    };
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
     };
 
     const stats = [
@@ -67,6 +77,7 @@ export default function Banner() {
                             placeholder="Search by location..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
+                            onKeyPress={handleKeyPress}
                             className={styles.searchInput}
                         />
                         <button onClick={handleSearch} className={styles.searchButton}>

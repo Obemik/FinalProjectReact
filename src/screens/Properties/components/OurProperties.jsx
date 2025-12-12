@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { FaMapMarkerAlt, FaHome, FaRegFileAlt } from "react-icons/fa";
 import styles from './OurProperties.module.css';
 import { houses } from '../../../assets/data/properties/properties';
@@ -9,10 +9,18 @@ import bathIcon from '../../../assets/img/home/bath.png';
 
 export default function OurProperties() {
     const navigate = useNavigate();
-    const [search, setSearch] = useState("");
+    const [searchParams] = useSearchParams();
+    
+    const searchFromUrl = searchParams.get('search') || '';
+    
+    const [search, setSearch] = useState(searchFromUrl);
     const [city, setCity] = useState("");
     const [property, setProperty] = useState("");
     const [type, setType] = useState("");
+
+    useEffect(() => {
+        setSearch(searchFromUrl);
+    }, [searchFromUrl]);
 
     const filtered = houses.filter((p) => {
         const searchText = search.toLowerCase();
@@ -26,6 +34,20 @@ export default function OurProperties() {
             (type ? p.type.toLowerCase() === type.toLowerCase() : true)
         );
     });
+
+    const handleSearchClick = () => {
+        if (search.trim()) {
+            navigate(`/properties?search=${encodeURIComponent(search.trim())}`);
+        } else {
+            navigate('/properties');
+        }
+    };
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleSearchClick();
+        }
+    };
 
     return (
         <section className={styles.section}>
@@ -59,10 +81,13 @@ export default function OurProperties() {
                                 placeholder="Search properties"
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
+                                onKeyPress={handleKeyPress}
                                 className={styles.input}
                             />
                         </div>
-                        <button className={styles.searchBtn}>Search Now</button>
+                        <button className={styles.searchBtn} onClick={handleSearchClick}>
+                            Search Now
+                        </button>
                     </div>
                     
                     <div className={styles.selectGroup}>
@@ -107,34 +132,59 @@ export default function OurProperties() {
                     </div>
                 </div>
 
-                <div className={styles.container}>
-                    {filtered.map((house, index) => (
-                        <Link 
-                            key={house.id} 
-                            className={`${styles.card} ${index % 2 === 1 ? styles.cardShift : ''}`}
-                            to={`/properties/${house.id}`}
+                {/* Show "Nothing found" message if no results */}
+                {filtered.length === 0 ? (
+                    <div className={styles.noResults}>
+                        <div className={styles.noResultsIcon}>🏠</div>
+                        <h3 className={styles.noResultsTitle}>Nothing Found</h3>
+                        <p className={styles.noResultsText}>
+                            We couldn't find any properties matching your search criteria.
+                            <br />
+                            Try adjusting your filters or search terms.
+                        </p>
+                        <button 
+                            className={styles.resetBtn}
+                            onClick={() => {
+                                setSearch("");
+                                setCity("");
+                                setProperty("");
+                                setType("");
+                                navigate('/properties');
+                            }}
                         >
-                            <img className={styles.img} src={house.img} alt={house.location} />
-                            <div className={styles.line}></div>
-                            <p className={styles.price}>{house.price}</p>
-                            <p className={styles.location}>{house.location}</p>
-                            <div className={styles.details}>
-                                <div className={styles.detailBox}>
-                                    <img className={styles.icon} src={sqftIcon} alt="sqft" />
-                                    <span>{house.sqft}</span>
+                            Reset Filters
+                        </button>
+                    </div>
+                ) : (
+                    <div className={styles.container}>
+                        {filtered.map((house, index) => (
+                            <Link 
+                                key={house.id} 
+                                className={`${styles.card} ${index % 2 === 1 ? styles.cardShift : ''}`}
+                                to={`/properties/${house.id}`}
+                            >
+                                <img className={styles.img} src={house.img} alt={house.location} />
+                                <div className={styles.line}></div>
+                                <p className={styles.price}>{house.price}</p>
+                                <p className={styles.location}>{house.location}</p>
+                                <div className={styles.details}>
+                                    <div className={styles.detailBox}>
+                                        <img className={styles.icon} src={sqftIcon} alt="sqft" />
+                                        <span>{house.sqft}</span>
+                                    </div>
+                                    <div className={styles.detailBox}>
+                                        <img className={styles.icon} src={bedIcon} alt="bed" />
+                                        <span>{house.bed}</span>
+                                    </div>
+                                    <div className={styles.detailBox}>
+                                        <img className={styles.icon} src={bathIcon} alt="bath" />
+                                        <span>{house.bath}</span>
+                                    </div>
                                 </div>
-                                <div className={styles.detailBox}>
-                                    <img className={styles.icon} src={bedIcon} alt="bed" />
-                                    <span>{house.bed}</span>
-                                </div>
-                                <div className={styles.detailBox}>
-                                    <img className={styles.icon} src={bathIcon} alt="bath" />
-                                    <span>{house.bath}</span>
-                                </div>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
+                            </Link>
+                        ))}
+                    </div>
+                )}
             </div>
         </section>
     );

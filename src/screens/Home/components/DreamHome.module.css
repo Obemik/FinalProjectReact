@@ -84,3 +84,40 @@
     opacity: 0.7;
 }
 
+@media (max-width: 768px) {
+    .dreamHomeContainer {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 40px;
+    }
+
+    .imagesGrid {
+        width: 100%;
+        height: auto;
+    }
+
+    .imageGroup {
+        width: 100%;
+        height: auto;
+    }
+
+    .dreamHomeTitle {
+        font-size: 36px;
+        margin-bottom: 24px;
+    }
+
+    .dreamHomeDescription {
+        font-size: 16px;
+        margin-bottom: 24px;
+        max-width: 100%;
+    }
+
+    .statsContainer {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .statItem {
+        align-items: center;
+    }
+}

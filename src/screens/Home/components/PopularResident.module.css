@@ -124,3 +124,23 @@
     object-fit: contain;
 }
 
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .titleText {
+        padding-left: 20px;
+    }
+    .explore {
+        display: none;
+    }
+    .cardShift {
+        margin-top: 10px;
+    }
+    .detailBox {
+        width: 31%
+    }
+}

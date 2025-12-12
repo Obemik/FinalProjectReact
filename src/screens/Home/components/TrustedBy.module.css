@@ -58,3 +58,15 @@
     opacity: 1;
 }
 
+@media (max-width: 768px) {
+    .trustedByContainer {
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .trustedByLogos {
+        flex-direction: column;
+        justify-content: center;
+        gap: 64px;
+    }
+}

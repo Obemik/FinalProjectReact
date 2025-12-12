@@ -185,3 +185,100 @@
     background: #D84A1F;
 }
 
+@media (max-width: 768px) {
+    .bannerSection {
+        padding: 40px 20px 80px;
+    }
+
+    .bannerMain {
+        gap: 40px;
+    }
+
+    .bannerContent {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .bannerLeft {
+        width: 100%;
+    }
+
+    .bannerRight {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .bannerTitle {
+        font-size: 40px;
+        line-height: 120%;
+    }
+
+    .bannerDescription {
+        font-size: 16px;
+        line-height: 150%;
+        margin-bottom: 24px;
+    }
+
+    .bannerButton {
+        padding: 16px 28px;
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+
+    .bannerStats {
+        flex-direction: column;
+        gap: 24px;
+        align-items: flex-start;
+    }
+
+    .statItem {
+        width: 100%;
+    }
+
+    .statNumber {
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+
+    .statLabel {
+        font-size: 16px;
+    }
+
+    .bannerImageWrapper {
+        margin-top: 20px;
+    }
+
+    .bannerImage {
+        border-radius: 8px;
+    }
+
+    .searchBar {
+        position: absolute;
+        bottom: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 40px);
+        max-width: none;
+        padding: 6px;
+        gap: 8px;
+    }
+
+    .searchIcon {
+        font-size: 24px;
+        margin-left: 0;
+        margin-left: 8px;
+    }
+
+    .searchInput {
+        font-size: 16px;
+        padding: 12px 8px;
+        width: 80%;
+    }
+
+    .searchButton {
+        width: 35%;
+        padding: 14px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+}
