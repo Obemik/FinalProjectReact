@@ -1,0 +1,199 @@
+.section {
+    padding-top: 120px;
+    padding-bottom: 240px;
+    background-color: #FFFFFF;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 128px;
+}
+
+.title {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 116%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #070707;
+    margin: 0;
+    flex: 0 0 auto;
+}
+
+.textButtonWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex: 1;
+}
+
+.description {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #070707;
+    opacity: 0.7;
+    margin: 0;
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.primaryButton {
+    background-color: #F15A29;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 20px 32px;
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.primaryButton:hover {
+    background-color: #D84A1F;
+}
+
+.secondaryButton {
+    background-color: #FFFFFF;
+    color: #070707;
+    border: 2px solid #E0E0E0;
+    border-radius: 12px;
+    padding: 18px 32px;
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+    border-color: #F15A29;
+    color: #F15A29;
+}
+
+.imagesWrapper {
+    position: relative;
+    width: 100%;
+    height: 460px;
+}
+
+.image1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 810px;
+    height: 600px;
+    border-radius: 24px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.image2 {
+    position: absolute;
+    bottom: -250px;
+    right: 0;
+    width: 750px;
+    height: 520px;
+    border-radius: 24px;
+    object-fit: cover;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 10px 20px;
+        padding-bottom: 80px;
+        overflow-x: hidden; 
+    }
+    
+    .container {
+        gap: 40px;
+        overflow: visible;
+        padding: 0;
+        max-width: 100%;
+    }
+    
+    .content {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .title {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+    
+    .textButtonWrapper {
+        gap: 40px;
+    }
+    
+    .description {
+        font-size: 16px;
+    }
+    
+    .buttons {
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .primaryButton,
+    .secondaryButton {
+        padding: 14px 28px;
+        font-size: 16px;
+        white-space: nowrap; 
+    }
+    
+    .imagesWrapper {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 400px;
+        margin-bottom: 80px;
+        padding: 0; 
+    }
+    
+    .image1 {
+        position: relative;
+        width: 82%; 
+        max-width: 100%;
+        height: auto;
+        left: 0;
+        top: 0;
+        border-radius: 16px;
+    }
+    
+    .image2 {
+        position: absolute;
+        width: 70%;
+        max-width: 100%;
+        height: auto;
+        right: 0;
+        top: 120px;
+        border-radius: 16px;
+    }
+}

@@ -1,0 +1,202 @@
+.propertiesSection {
+    position: relative;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    margin-top: 120px;
+    overflow: hidden;
+}
+
+.propertiesBackground {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    z-index: 1;
+}
+
+.backgroundImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.propertiesContainer {
+    position: relative;
+    max-width: 1240px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.title {
+    font-family: "THICCCBOI";
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #070707;
+    margin: 0 0 80px 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 0 0 32px 0;
+    text-decoration: none;
+    color: #070707;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .img {
+    transform: scale(1.05);
+}
+
+.line {
+    width: 140px;
+    height: 3px;
+    background: #070707;
+    margin: 48px 0 48px 32px;
+}
+
+.price {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #070707;
+    margin: 0 0 16px 32px;
+}
+
+.location {
+    font-family: "THICCCBOI";
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+    color: #070707;
+    margin: 0 28px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin: 28px 32px 0;
+    border-top: 1px solid #E0E0E0;
+    padding-top: 32px;
+    gap: 16px;
+}
+
+.detailBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: "THICCCBOI";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: #070707;
+    padding: 12px 16px;
+    flex: 1;
+    border-radius: 6px;
+    background: #F3F3F3;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .propertiesSection {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin-top: 40px;
+    }
+
+    .propertiesContainer {
+        padding: 0 20px;
+    }
+
+    .title {
+        font-size: 32px;
+        margin: 0 0 40px 0;
+        text-align: left;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .card {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 0 24px 0;
+    }
+
+    .img {
+        height: 260px;
+    }
+
+    .line {
+        width: 60px;
+        height: 4px;
+        margin: 16px 0 16px 20px;
+    }
+
+    .price {
+        font-size: 32px;
+        margin: 0 0 12px 20px;
+    }
+
+    .location {
+        font-size: 18px;
+        margin: 0 20px;
+    }
+
+    .details {
+        margin: 20px 20px 0;
+        padding-top: 20px;
+        gap: 8px;
+    }
+
+    .detailBox {
+        font-size: 14px;
+        padding: 10px 12px;
+        gap: 6px;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .backgroundImage {
+        object-fit: cover;
+        object-position: center;
+    }
+}

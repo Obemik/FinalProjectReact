@@ -1,0 +1,109 @@
+.section {
+    background-color: #FFFFFF;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.mainTitle {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 125%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #070707;
+    margin: 0 0 50px 0;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 93px;
+}
+
+.statCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.statNumber {
+    font-family: "THICCCBOI";
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #F15A29;
+    margin: 0 0 32px 0;
+}
+
+.statTitle {
+    font-family: "THICCCBOI";
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 125%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #070707;
+    margin: 0 0 16px 0;
+}
+
+.statDescription {
+    font-family: "THICCCBOI";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #070707;
+    opacity: 0.7;
+    margin: 0;
+    max-width: 297px;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 10px 20px;
+        padding-top: 0;
+        padding-bottom: 40px;
+    }
+    
+    .mainTitle {
+        font-size: 40px;
+        margin: 0 0 20px 0;
+    }
+    
+    .statsGrid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .statCard {
+        margin-bottom: 20px;
+    }
+    
+    .statNumber {
+        font-size: 50px;
+        margin: 20px 0;
+    }
+    
+    .statTitle {
+        font-size: 20px;
+        margin: 0 0 10px 0;
+    }
+    
+    .statDescription {
+        font-size: 16px;
+        max-width: 100%;
+    }
+}

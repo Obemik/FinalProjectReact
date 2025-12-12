@@ -1,0 +1,86 @@
+.dreamHomeSection {
+    padding-top: 120px;
+    background-color: #FFFFFF;
+}
+
+.dreamHomeContainer {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    gap: 73px;
+    align-items: center;
+}
+
+.imagesGrid {
+    position: relative;
+    width: 612px;
+    height: 741px;
+    flex-shrink: 0;
+}
+
+.imageGroup {
+    width: 612px;
+    height: 741px;
+}
+
+.dreamHomeContent {
+    flex: 1;
+}
+
+.dreamHomeTitle {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 125%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #070707;
+    margin: 0 0 48px 0;
+}
+
+.dreamHomeDescription {
+    font-family: "THICCCBOI";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #070707;
+    margin: 0 0 48px 0;
+    max-width: 478px;
+}
+
+.statsContainer {
+    display: flex;
+    gap: 50px;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.statNumber {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: capitalize;
+    color: #070707;
+}
+
+.statLabel {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 125%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: capitalize;
+    color: #070707;
+    opacity: 0.7;
+}
+

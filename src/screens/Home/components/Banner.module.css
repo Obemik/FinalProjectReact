@@ -1,0 +1,187 @@
+.bannerSection {
+    background-color: #070707;
+    padding: 80px 20px 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bannerMain {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.bannerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 148px;
+}
+
+.bannerLeft {
+    flex: 0 0 auto;
+}
+
+.bannerRight {
+    flex: 1;
+    padding-top: 20px;
+}
+
+.bannerTitle {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 115.99999999999999%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.bannerHighlight {
+    color: #F15A29;
+}
+
+.bannerDescription {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 180%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    opacity: 0.7;
+    margin: 0 0 24px 0;
+}
+
+.bannerButton {
+    background: #F15A29;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 20px 32px;
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 32px;
+}
+
+.bannerButton:hover {
+    background: #D84A1F;
+}
+
+.bannerStats {
+    display: flex;
+    gap: 44px;
+    align-items: center;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.statNumber {
+    font-family: "THICCCBOI";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: 1%;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.statSuffix {
+    color: #F15A29;
+}
+
+.statLabel {
+    font-family: "THICCCBOI";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 1%;
+    color: #FFFFFF;
+    opacity: 0.7;
+}
+
+.bannerImageWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1240px;
+}
+
+.bannerImage {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.searchBar {
+    position: absolute;
+    bottom: -28px;
+    left: 30%;
+    transform: translateX(-50%);
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+    width: 90%;
+    max-width: 654px;
+}
+
+.searchIcon {
+    color: #F15A29;
+    font-size: 35px;
+    margin-left: 12px;
+    flex-shrink: 0;
+}
+
+.searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 1%;
+    color: #070707;
+    background: transparent;
+    padding: 12px 8px;
+}
+
+.searchInput::placeholder {
+    color: #070707;
+    opacity: 0.5;
+}
+
+.searchButton {
+    background: #F15A29;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 24px;
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 1%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    white-space: nowrap;
+}
+
+.searchButton:hover {
+    background: #D84A1F;
+}
+

@@ -1,0 +1,267 @@
+.contactUsSection {
+    background-color: #ffffff;
+    padding-top: 66px;
+    padding-bottom: 120px;
+}
+
+.contactUsContainer {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.contactInfo {
+    flex: 1;
+    max-width: 480px;
+}
+
+.contactTitle {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 76px;
+    letter-spacing: 0px;
+    color: #070707;
+    margin: 0 0 16px 0;
+}
+
+.contactDescription {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #070707;
+    opacity: 0.7;
+    margin: 0 0 48px 0;
+}
+
+.contactDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+}
+
+.contactIcon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.contactItem span {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 19px;
+    line-height: 36px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #070707;
+}
+
+.contactFormWrapper {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 48px;
+    box-shadow: 0px 0px 25px 0px #0000001A;
+    max-width: 680px;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 100%;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.formInput {
+    width: 100%;
+    padding: 18px 24px;
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.17px;
+    vertical-align: middle;
+    color: #070707;
+    background: #EFEFEF;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    transition: background 0.3s ease;
+    box-sizing: border-box;
+}
+
+.formInput:focus {
+    background: #E5E5E5;
+}
+
+.formInput::placeholder {
+    color: #070707;
+    opacity: 0.5;
+}
+
+.formSelect {
+    appearance: none;
+    cursor: pointer;
+    color: rgba(7, 7, 7, 0.5);
+}
+
+.formSelect:valid {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.formSelect option {
+    color: #070707;
+}
+
+.formTextarea {
+    width: 100%;
+    padding: 18px 24px;
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #070707;
+    background: #EFEFEF;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    resize: vertical;
+    min-height: 160px;
+    transition: background 0.3s ease;
+    box-sizing: border-box;
+}
+
+.formTextarea:focus {
+    background: #E5E5E5;
+}
+
+.formTextarea::placeholder {
+    color: #070707;
+    opacity: 0.5;
+}
+
+.submitButton {
+    background: #F15A29;
+    color: #F3F3F3;
+    border: none;
+    border-radius: 12px;
+    padding: 20px 32px;
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    align-self: flex-start;
+}
+
+.submitButton:hover {
+    background: #D84A1F;
+}
+
+@media (max-width: 768px) {
+    .contactUsSection {
+        padding-top: 10px;
+        padding-bottom: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .contactUsContainer {
+        flex-direction: column;
+        gap: 40px;
+        max-width: 100%;
+    }
+
+    .contactInfo {
+        max-width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .contactTitle {
+        font-size: 50px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .contactDescription {
+        font-size: 16px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .contactDetails {
+        gap: 20px;
+        align-items: center;
+    }
+
+    .contactItem {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .contactIcon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .contactItem span {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .contactFormWrapper {
+        max-width: 95%;
+        padding: 25px 20px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .contactForm {
+        gap: 15px;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .formInput,
+    .formSelect,
+    .formTextarea {
+        width: 100% !important;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 15px 20px;
+    }
+
+    .formTextarea {
+        min-height: 140px;
+    }
+
+    .submitButton {
+        width: 100%;
+        padding: 14px 28px;
+        text-align: center;
+    }
+}

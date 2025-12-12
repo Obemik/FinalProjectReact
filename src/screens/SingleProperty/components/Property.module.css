@@ -1,0 +1,719 @@
+.propertyPage {
+    background: #FFFFFF;
+}
+
+.headerSection {
+    padding-top: 66px;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.mainTitle {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 115.99999999999999%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: capitalize;
+    color: #070707;
+    margin: 0 0 32px 0;
+}
+
+.breadcrumb {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #070707;
+    opacity: 0.7;
+    margin-bottom: 32px;
+}
+
+.breadcrumb a {
+    color: #070707;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb span {
+    color: #070707;
+    opacity: 0.7;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 64px;
+}
+
+.btnOrange {
+    padding: 16px 32px;
+    background: #F15A29;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btnOrange:hover {
+    background: #d64d20;
+}
+
+.btnWhite {
+    padding: 16px 32px;
+    background: #FFFFFF;
+    color: #070707;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.btnWhite:hover {
+    border-color: #070707;
+}
+
+.contentSection {
+    padding-top: 120px;
+}
+
+.imageWrapper {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.mainImage {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    margin-bottom: 64px;
+}
+
+.mainContent {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 60px;
+}
+
+.leftColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.priceTag {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    background: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #070707;
+}
+
+.propertyInfo {
+    margin-top: 4px;
+}
+
+.category {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #070707;
+    opacity: 0.6;
+    margin: 0 0 12px 0;
+}
+
+.propertyTitle {
+    font-family: "THICCCBOI";
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 50px;
+    color: #070707;
+    margin: 0 0 51px 0;
+}
+
+.description {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    width: 490px;
+    color: #070707;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.aboutSection {
+    padding-top: -20px;
+}
+
+.sectionTitle {
+    font-family: "THICCCBOI";
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #070707;
+    margin: 0 0 24px 0;
+}
+
+.galleryTitle { 
+    font-family: "THICCCBOI";
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #070707;
+    margin: 0 0 64px 0;
+}
+
+.aboutList {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0;
+}
+
+.aboutList li {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #070707;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.aboutList li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #070707;
+}
+
+.amenitiesSection {
+    padding-top: -20px;
+}
+
+.amenitiesList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.amenityItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #070707;
+}
+
+.checkIcon {
+    width: 20px;
+    height: 20px;
+    color: #070707;
+    flex-shrink: 0;
+}
+
+.gallerySection {
+    padding-top: 100px;
+    border-top: 1px solid #E0E0E0;
+}
+
+.galleryImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 24px;
+}
+
+.rightColumn {
+    position: static;
+    top: 100px;
+    height: fit-content;
+}
+
+.contactCard {
+    padding: 30px 50px;
+    border: 1px solid #ddd;
+    height: fit-content;
+    border-radius: 24px;
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.contactTitle {
+    font-family: "THICCCBOI";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #070707;
+    opacity: 0.7;
+}
+
+.propertyPrice {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 125%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #070707;
+    margin: 0;
+}
+
+.contactFormTitle {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30.01px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #070707;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input,
+.textarea {
+    border: none;
+    background: #F3F3F3;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-family: "THICCCBOI";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #070707;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: #F15A29;
+    outline: none;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 16px;
+    background: #F15A29;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    font-family: "THICCCBOI";
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submitBtn:hover {
+    background: #d64d20;
+}
+
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modalContent {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: #070707;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.closeBtn:hover {
+    color: #F15A29;
+}
+
+.modalTitle {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 130%;
+    color: #070707;
+    margin-bottom: 12px;
+}
+
+.modalPrice {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 125%;
+    color: #F15A29;
+    margin-bottom: 30px;
+}
+
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modalInput,
+.modalTextarea {
+    border: none;
+    background: #F3F3F3;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-family: "THICCCBOI";
+    font-weight: 500;
+    font-size: 16px;
+    color: #070707;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modalInput:focus,
+.modalTextarea:focus {
+    outline: 2px solid #F15A29;
+}
+
+.modalTextarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.modalSubmitBtn {
+    width: 100%;
+    padding: 18px;
+    background: #F15A29;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.modalSubmitBtn:hover {
+    background: #d64d20;
+}
+
+/* Success Modal */
+.successModalContent {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    text-align: center;
+}
+
+.successIcon {
+    width: 80px;
+    height: 80px;
+    background: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    color: #FFFFFF;
+    font-size: 40px;
+}
+
+.successTitle {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 130%;
+    color: #070707;
+    margin-bottom: 16px;
+}
+
+.successMessage {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #070707;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.successBtn {
+    width: 100%;
+    padding: 18px;
+    background: #F15A29;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.successBtn:hover {
+    background: #d64d20;
+}
+
+.notFound {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.notFound h2 {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 40px;
+    color: #070707;
+}
+
+.notFound a {
+    color: #F15A29;
+    text-decoration: none;
+    font-family: "THICCCBOI";
+    font-weight: 600;
+}
+
+/* Mobile Adaptation */
+@media (max-width: 768px) {
+    .headerSection {
+        padding: 40px 20px 20px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .mainTitle {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .breadcrumb {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .btnOrange,
+    .btnWhite {
+        width: 100%;
+        padding: 16px 20px;
+    }
+
+    .contentSection {
+        padding-top: 40px;
+    }
+
+    .imageWrapper {
+        margin-bottom: 30px;
+    }
+
+    .mainImage {
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .priceTag {
+        font-size: 16px;
+        padding: 10px 16px;
+        top: 16px;
+        left: 16px;
+    }
+
+    .category {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .propertyTitle {
+        font-size: 24px;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+
+    .mainContent {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .leftColumn {
+        gap: 40px;
+    }
+
+    .description {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .sectionTitle {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .aboutList li {
+        font-size: 16px;
+    }
+
+    .amenitiesList {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .amenityItem {
+        font-size: 14px;
+    }
+
+    .checkIcon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .gallerySection {
+        padding-top: 50px;
+        margin-top: 40px;
+    }
+
+    .galleryTitle {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    /* Hide contact form on mobile */
+    .rightColumn {
+        display: none;
+    }
+
+    /* Mobile Modal Adjustments */
+    .modalContent {
+        padding: 30px 20px;
+        max-width: 90%;
+    }
+
+    .modalTitle {
+        font-size: 20px;
+        padding-right: 30px;
+    }
+
+    .modalPrice {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+
+    .successModalContent {
+        padding: 40px 30px;
+        max-width: 90%;
+    }
+
+    .successIcon {
+        width: 70px;
+        height: 70px;
+        font-size: 35px;
+        margin-bottom: 24px;
+    }
+
+    .successTitle {
+        font-size: 26px;
+    }
+
+    .successMessage {
+        font-size: 16px;
+    }
+}

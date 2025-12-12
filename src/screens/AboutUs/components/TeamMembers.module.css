@@ -1,0 +1,212 @@
+.teamMembersSection {
+    position: relative;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    overflow: hidden;
+}
+
+.teamBackground {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    z-index: 1;
+}
+
+.backgroundImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.teamContainer {
+    position: relative;
+    max-width: 1240px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.teamTitle {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 125%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #070707;
+    margin: 0 0 80px 0;
+    text-align: center;
+}
+
+.teamGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.teamCard {
+    background: #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teamCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.cardImageWrapper {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+}
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.teamCard:hover .cardImage {
+    transform: scale(1.05);
+}
+
+.roleLabel {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-family: "THICCCBOI";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #070707;
+}
+
+.cardContent {
+    padding: 24px;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.agentName {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #070707;
+    margin: 0;
+}
+
+.linkedinButton {
+    width: 48px;
+    height: 48px;
+    background: #F15A29;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.linkedinButton:hover {
+    background: #D84A1F;
+}
+
+.agentDescription {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    width: 230px;
+    color: #070707;
+    opacity: 0.7;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .teamMembersSection {
+        padding: 60px 20px;
+    }
+    
+    .teamContainer {
+        padding: 0;
+    }
+    
+    .teamTitle {
+        font-size: 40px;
+        margin: 0 0 60px 0;
+    }
+    
+    .teamGrid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .teamCard {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .cardImageWrapper {
+        height: auto;
+    }
+    
+    .cardImage {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    
+    .roleLabel {
+        font-size: 18px;
+        padding: 6px 14px;
+        top: 16px;
+        left: 16px;
+    }
+    
+    .cardContent {
+        padding: 20px;
+    }
+    
+    .agentName {
+        font-size: 24px;
+    }
+    
+    .linkedinButton {
+        width: 48px;
+        height: 48px;
+        font-size: 32px;
+    }
+    
+    .agentDescription {
+        font-size: 16px;
+        width: 100%;
+        max-width: 100%;
+    }
+}

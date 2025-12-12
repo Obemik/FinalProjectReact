@@ -1,0 +1,73 @@
+.constructionPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    margin-top: 66px;
+}
+
+.constructionContainer {
+    max-width: 1240px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.constructionImage {
+    width: 960px;
+    height: 636px;
+    max-width: 100%;
+}
+
+.constructionImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.constructionTitle {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 70px;
+    line-height: 115.99999999999999%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: capitalize;
+    color: #070707;
+    margin: 0;
+    width: 667px;
+}
+
+.constructionDescription {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #070707;
+    opacity: 0.7;
+    margin: 0;
+    max-width: 640px;
+}
+@media (max-width: 768px) {
+    .constructionImage {
+        width: 100%;
+        height: auto;
+    }
+
+    .constructionTitle {
+        font-size: 40px;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .constructionDescription {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+}

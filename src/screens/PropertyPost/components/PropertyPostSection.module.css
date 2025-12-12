@@ -1,0 +1,292 @@
+.section {
+    padding-top: 66px;
+    background: #FFFFFF;
+}
+
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 80px;
+    max-width: 1240px;
+    margin-bottom: 80px;
+}
+
+.containerForm {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 115.99999999999999%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #070707;
+    margin: 0;
+}
+
+.headerRight {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.text {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #070707;
+    opacity: 0.7;
+    margin: 0;
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.btnOrange {
+    font-family: "THICCCBOI";
+    background: #F15A29;
+    padding: 16px 32px;
+    border-radius: 12px;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btnOrange:hover {
+    background: #e04e20;
+}
+
+.btnWhite {
+    font-family: "THICCCBOI";
+    background: #FFFFFF;
+    padding: 16px 32px;
+    border-radius: 12px;
+    border: 2px solid #E0E0E0;
+    color: #070707;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btnWhite:hover {
+    border-color: #F15A29;
+    color: #F15A29;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.subtitle {
+    font-family: "THICCCBOI";
+    font-weight: 500;
+    font-size: 37px;
+    line-height: 52px;
+    letter-spacing: -1.26px;
+    vertical-align: middle;
+    color: #070707;
+    margin: 0;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    font-family: "THICCCBOI";
+    padding: 18px 20px;
+    border: none;
+    background: #F3F3F3;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.17px;
+    vertical-align: middle;
+    color: #070707;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background 0.3s ease;
+}
+
+.input:focus {
+    outline: none;
+    background: #EBEBEB;
+}
+
+.input::placeholder {
+    color: #070707;
+    opacity: 0.5;
+}
+
+.textarea {
+    font-family: "THICCCBOI";
+    padding: 18px 20px;
+    border: none;
+    background: #F3F3F3;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #070707;
+    min-height: 140px;
+    resize: vertical;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background 0.3s ease;
+}
+
+.textarea:focus {
+    outline: none;
+    background: #EBEBEB;
+}
+
+.textarea::placeholder {
+    color: #070707;
+    opacity: 0.5;
+}
+
+.checkboxGroup {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.checkboxLabel {
+    font-family: "THICCCBOI";
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 27.2px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-transform: capitalize;
+    color: #070707;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.checkboxLabel input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #F15A29;
+}
+
+.btnOrangeSubmit {
+    font-family: "THICCCBOI";
+    background: #F15A29;
+    padding: 16px 32px;
+    border-radius: 12px;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    cursor: pointer;
+    width: fit-content;
+    transition: background 0.3s ease;
+    margin-top: 16px;
+}
+
+.btnOrangeSubmit:hover {
+    background: #e04e20;
+}
+
+.error {
+    font-family: "THICCCBOI";
+    color: #EF4444;
+    font-size: 14px;
+    margin-top: 6px;
+    margin-left: 4px;
+}
+
+.success {
+    font-family: "THICCCBOI";
+    color: #10B981;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 20px;
+    }
+
+    .header {
+        gap: 32px;
+        margin-bottom: 48px;
+    }
+
+    .title {
+        font-size: 42px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btnOrange,
+    .btnWhite {
+        width: 100%;
+        font-size: 16px;
+        padding: 14px 24px;
+    }
+
+    .subtitle {
+        font-size: 32px;
+    }
+
+    .grid2 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .checkboxGroup {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .form {
+        gap: 24px;
+    }
+
+    .btnOrangeSubmit {
+        width: 100%;
+    }
+}

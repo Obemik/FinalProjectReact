@@ -1,0 +1,235 @@
+.footer {
+    background: #070707;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 140px;
+}
+
+.footerContainer {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.footerBrand {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 380px;
+    margin-right: 45px;
+}
+
+.footerLogoLink {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.footerLogo {
+    height: 40px;
+    width: 40px;
+}
+
+.footerLogoText {
+    font-family: "THICCCBOI";
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 31.76px;
+    letter-spacing: 0px;
+    color: #ffffff;
+}
+
+.footerAbout {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0%;
+    color: #FFFFFF;
+    opacity: 0.7;
+    margin: 0;
+}
+
+.footerMenuSection {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footerTitle {
+    font-family: "THICCCBOI";
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 0%;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.footerMenuColumns {
+    display: flex;
+    gap: 150px;
+}
+
+.footerLinkList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.footerLink {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.footerLink:hover {
+    opacity: 1;
+    color: #F15A29;
+}
+
+.footerSocialSection {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footerSocialLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.socialLinkItem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.socialIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.socialLinkItem:hover .socialIcon {
+    background: #F15A29;
+    border-color: #F15A29;
+    transform: translateY(-2px);
+}
+
+.socialIcon svg {
+    font-size: 14px;
+}
+
+.socialText {
+    font-family: "THICCCBOI";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.socialLinkItem:hover .socialText {
+    opacity: 1;
+    color: #F15A29;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .footer {
+        padding: 80px 40px 100px 40px;
+    }
+
+    .footerMenuColumns {
+        gap: 80px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 25px 60px 25px;
+    }
+
+    .footerContainer {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footerBrand {
+        margin-right: 0;
+        max-width: 100%;
+    }
+
+    .footerAbout {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .footerMenuSection {
+        width: 100%;
+        gap: 24px;
+    }
+
+    .footerMenuColumns {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .footerLinkList {
+        gap: 16px;
+    }
+
+    .footerLink {
+        font-size: 16px;
+    }
+
+    .footerSocialSection {
+        width: 100%;
+        gap: 24px;
+    }
+
+    .footerSocialLinks {
+        gap: 16px;
+    }
+
+    .socialText {
+        font-size: 16px;
+    }
+
+    .footerTitle {
+        font-size: 18px;
+    }
+}
