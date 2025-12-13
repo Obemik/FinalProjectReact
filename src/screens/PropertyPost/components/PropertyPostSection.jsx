@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import emailjs from '@emailjs/browser';
+import SuccessModal from "../../../component/SuccessModal";
 import styles from './PropertyPostSection.module.css';
 
 export default function PropertyPostSection() {
@@ -31,21 +33,12 @@ export default function PropertyPostSection() {
     });
 
     const [errors, setErrors] = useState({});
-    const [success, setSuccess] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const amenitiesList = [
-        "Garden",
-        "Pool",
-        "Vigilance",
-        "Laundry",
-        "Security Cameras",
-        "Video Surveillance",
-        "Dish Washer",
-        "Internet",
-        "Elevator",
-        "Jacuzzi",
-        "Solar Panel",
-        "Garage",
+        "Garden", "Pool", "Vigilance", "Laundry", "Security Cameras", "Video Surveillance",
+        "Dish Washer", "Internet", "Elevator", "Jacuzzi", "Solar Panel", "Garage",
     ];
 
     const handleChange = (e) => {
@@ -103,40 +96,76 @@ export default function PropertyPostSection() {
         return newErrors;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const validationErrors = validate();
+        
         if (Object.keys(validationErrors).length > 0) {
             setErrors(validationErrors);
-            setSuccess(false);
             return;
         }
-        setErrors({});
-        setSuccess(true);
-        console.log('Property submitted:', formData);
 
-        setFormData({
-            fullName: "",
-            email: "",
-            phone: "",
-            title: "",
-            propertyType: "",
-            listingType: "",
-            location: "",
-            address: "",
-            price: "",
-            bedrooms: "",
-            parking: "",
-            constructionSqft: "",
-            landSqft: "",
-            description: "",
-            amenities: [],
-        });
+        setIsLoading(true);
+        setErrors({});
+
+        try {
+            await emailjs.send(
+                'service_t4frkri',
+                'template_6zaa819',
+                {
+                    from_name: formData.fullName,
+                    from_email: formData.email,
+                    phone: formData.phone,
+                    property_title: formData.title,
+                    property_type: formData.propertyType,
+                    listing_type: formData.listingType,
+                    location: formData.location,
+                    address: formData.address,
+                    price: formData.price,
+                    bedrooms: formData.bedrooms,
+                    parking: formData.parking,
+                    construction_sqft: formData.constructionSqft,
+                    land_sqft: formData.landSqft,
+                    description: formData.description,
+                    amenities: formData.amenities.join(', '),
+                    to_email: 'ditay30803@lawior.com',
+                    reply_to: formData.email
+                },
+                'hIKMeL6Kp1QlDhh0I'           
+            );
+
+            console.log('Property submitted:', formData);
+            setShowModal(true);
+
+            setFormData({
+                fullName: "",
+                email: "",
+                phone: "",
+                title: "",
+                propertyType: "",
+                listingType: "",
+                location: "",
+                address: "",
+                price: "",
+                bedrooms: "",
+                parking: "",
+                constructionSqft: "",
+                landSqft: "",
+                description: "",
+                amenities: [],
+            });
+        } catch (error) {
+            console.error("Error sending email:", error);
+            alert("Failed to submit property. Please try again.");
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
-        <section className={styles.section}>
-            <div className={styles.header}>
+        <>
+            <section className={styles.section}>
+                <div className={styles.header}>
                     <h2 className={styles.title}>Post Your <br /> Property</h2>
                     <div className={styles.headerRight}>
                         <p className={styles.text}>
@@ -153,203 +182,229 @@ export default function PropertyPostSection() {
                         </div>
                     </div>
                 </div>
-            <div className={styles.containerForm}>
-                <form ref={formRef} onSubmit={handleSubmit} className={styles.form}>
-                    <h3 className={styles.subtitle}>Client Info</h3>
-                    <div className={styles.grid2}>
-                        <div className={styles.inputWrapper}>
-                            <input
-                                type="text"
-                                className={styles.input}
-                                name="fullName"
-                                placeholder="Enter Your Full Name"
-                                value={formData.fullName}
-                                onChange={handleChange}
-                            />
-                            {errors.fullName && <p className={styles.error}>{errors.fullName}</p>}
-                        </div>
 
-                        <div className={styles.inputWrapper}>
-                            <input
-                                type="email"
-                                className={styles.input}
-                                name="email"
-                                placeholder="Email Address"
-                                value={formData.email}
-                                onChange={handleChange}
-                            />
-                            {errors.email && <p className={styles.error}>{errors.email}</p>}
-                        </div>
-
-                        <div className={styles.inputWrapper}>
-                            <input
-                                type="text"
-                                className={styles.input}
-                                name="phone"
-                                placeholder="Your Phone Number"
-                                value={formData.phone}
-                                onChange={handleChange}
-                            />
-                            {errors.phone && <p className={styles.error}>{errors.phone}</p>}
-                        </div>
-                    </div>
-
-                    <h3 className={styles.subtitle}>Property Info</h3>
-                    <div className={styles.grid2}>
-                        <div className={styles.inputWrapper}>
-                            <input
-                                type="text"
-                                className={styles.input}
-                                name="title"
-                                placeholder="Listing Title"
-                                value={formData.title}
-                                onChange={handleChange}
-                            />
-                            {errors.title && <p className={styles.error}>{errors.title}</p>}
-                        </div>
-
-                        <div className={styles.inputWrapper}>
-                            <input
-                                type="text"
-                                className={styles.input}
-                                name="propertyType"
-                                placeholder="Property Type"
-                                value={formData.propertyType}
-                                onChange={handleChange}
-                            />
-                            {errors.propertyType && <p className={styles.error}>{errors.propertyType}</p>}
-                        </div>
-
-                        <div className={styles.inputWrapper}>
-                            <input
-                                type="text"
-                                className={styles.input}
-                                name="listingType"
-                                placeholder="Listing Type"
-                                value={formData.listingType}
-                                onChange={handleChange}
-                            />
-                            {errors.listingType && <p className={styles.error}>{errors.listingType}</p>}
-                        </div>
-
-                        <div className={styles.inputWrapper}>
-                            <input
-                                type="text"
-                                className={styles.input}
-                                name="location"
-                                placeholder="Location"
-                                value={formData.location}
-                                onChange={handleChange}
-                            />
-                            {errors.location && <p className={styles.error}>{errors.location}</p>}
-                        </div>
-
-                        <div className={styles.inputWrapper}>
-                            <input
-                                type="text"
-                                className={styles.input}
-                                name="address"
-                                placeholder="Address"
-                                value={formData.address}
-                                onChange={handleChange}
-                            />
-                            {errors.address && <p className={styles.error}>{errors.address}</p>}
-                        </div>
-
-                        <div className={styles.inputWrapper}>
-                            <input
-                                type="text"
-                                className={styles.input}
-                                name="price"
-                                placeholder="Listing Price"
-                                value={formData.price}
-                                onChange={handleChange}
-                            />
-                            {errors.price && <p className={styles.error}>{errors.price}</p>}
-                        </div>
-
-                        <div className={styles.inputWrapper}>
-                            <input
-                                type="text"
-                                className={styles.input}
-                                name="bedrooms"
-                                placeholder="Bedrooms"
-                                value={formData.bedrooms}
-                                onChange={handleChange}
-                            />
-                            {errors.bedrooms && <p className={styles.error}>{errors.bedrooms}</p>}
-                        </div>
-
-                        <div className={styles.inputWrapper}>
-                            <input
-                                type="text"
-                                className={styles.input}
-                                name="parking"
-                                placeholder="Parking Lots"
-                                value={formData.parking}
-                                onChange={handleChange}
-                            />
-                            {errors.parking && <p className={styles.error}>{errors.parking}</p>}
-                        </div>
-
-                        <div className={styles.inputWrapper}>
-                            <input
-                                type="text"
-                                className={styles.input}
-                                name="constructionSqft"
-                                placeholder="Construction Sqft"
-                                value={formData.constructionSqft}
-                                onChange={handleChange}
-                            />
-                            {errors.constructionSqft && <p className={styles.error}>{errors.constructionSqft}</p>}
-                        </div>
-
-                        <div className={styles.inputWrapper}>
-                            <input
-                                type="text"
-                                className={styles.input}
-                                name="landSqft"
-                                placeholder="Land Sqft"
-                                value={formData.landSqft}
-                                onChange={handleChange}
-                            />
-                            {errors.landSqft && <p className={styles.error}>{errors.landSqft}</p>}
-                        </div>
-                    </div>
-
-                    <div className={styles.inputWrapper}>
-                        <textarea
-                            name="description"
-                            placeholder="Listing Description..."
-                            value={formData.description}
-                            onChange={handleChange}
-                            className={styles.textarea}
-                        />
-                        {errors.description && <p className={styles.error}>{errors.description}</p>}
-                    </div>
-
-                    <h3 className={styles.subtitle}>Property Amenities</h3>
-                    <div className={styles.checkboxGroup}>
-                        {amenitiesList.map((amenity) => (
-                            <label key={amenity} className={styles.checkboxLabel}>
+                <div className={styles.containerForm}>
+                    <form ref={formRef} onSubmit={handleSubmit} className={styles.form}>
+                        <h3 className={styles.subtitle}>Client Info</h3>
+                        <div className={styles.grid2}>
+                            <div className={styles.inputWrapper}>
                                 <input
-                                    type="checkbox"
-                                    checked={formData.amenities.includes(amenity)}
-                                    onChange={() => handleCheckbox(amenity)}
+                                    type="text"
+                                    className={styles.input}
+                                    name="fullName"
+                                    placeholder="Enter Your Full Name"
+                                    value={formData.fullName}
+                                    onChange={handleChange}
+                                    disabled={isLoading}
                                 />
-                                {amenity}
-                            </label>
-                        ))}
-                    </div>
-                    {errors.amenities && <p className={styles.error}>{errors.amenities}</p>}
+                                {errors.fullName && <p className={styles.error}>{errors.fullName}</p>}
+                            </div>
 
-                    <button className={styles.btnOrangeSubmit} type="submit">
-                        Submit for approval
-                    </button>
-                    {success && <p className={styles.success}>Property submitted successfully!</p>}
-                </form>
-            </div>
-        </section>
+                            <div className={styles.inputWrapper}>
+                                <input
+                                    type="email"
+                                    className={styles.input}
+                                    name="email"
+                                    placeholder="Email Address"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    disabled={isLoading}
+                                />
+                                {errors.email && <p className={styles.error}>{errors.email}</p>}
+                            </div>
+
+                            <div className={styles.inputWrapper}>
+                                <input
+                                    type="text"
+                                    className={styles.input}
+                                    name="phone"
+                                    placeholder="Your Phone Number"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    disabled={isLoading}
+                                />
+                                {errors.phone && <p className={styles.error}>{errors.phone}</p>}
+                            </div>
+                        </div>
+
+                        <h3 className={styles.subtitle}>Property Info</h3>
+                        <div className={styles.grid2}>
+                            <div className={styles.inputWrapper}>
+                                <input
+                                    type="text"
+                                    className={styles.input}
+                                    name="title"
+                                    placeholder="Listing Title"
+                                    value={formData.title}
+                                    onChange={handleChange}
+                                    disabled={isLoading}
+                                />
+                                {errors.title && <p className={styles.error}>{errors.title}</p>}
+                            </div>
+
+                            <div className={styles.inputWrapper}>
+                                <input
+                                    type="text"
+                                    className={styles.input}
+                                    name="propertyType"
+                                    placeholder="Property Type"
+                                    value={formData.propertyType}
+                                    onChange={handleChange}
+                                    disabled={isLoading}
+                                />
+                                {errors.propertyType && <p className={styles.error}>{errors.propertyType}</p>}
+                            </div>
+
+                            <div className={styles.inputWrapper}>
+                                <input
+                                    type="text"
+                                    className={styles.input}
+                                    name="listingType"
+                                    placeholder="Listing Type"
+                                    value={formData.listingType}
+                                    onChange={handleChange}
+                                    disabled={isLoading}
+                                />
+                                {errors.listingType && <p className={styles.error}>{errors.listingType}</p>}
+                            </div>
+
+                            <div className={styles.inputWrapper}>
+                                <input
+                                    type="text"
+                                    className={styles.input}
+                                    name="location"
+                                    placeholder="Location"
+                                    value={formData.location}
+                                    onChange={handleChange}
+                                    disabled={isLoading}
+                                />
+                                {errors.location && <p className={styles.error}>{errors.location}</p>}
+                            </div>
+
+                            <div className={styles.inputWrapper}>
+                                <input
+                                    type="text"
+                                    className={styles.input}
+                                    name="address"
+                                    placeholder="Address"
+                                    value={formData.address}
+                                    onChange={handleChange}
+                                    disabled={isLoading}
+                                />
+                                {errors.address && <p className={styles.error}>{errors.address}</p>}
+                            </div>
+
+                            <div className={styles.inputWrapper}>
+                                <input
+                                    type="text"
+                                    className={styles.input}
+                                    name="price"
+                                    placeholder="Listing Price"
+                                    value={formData.price}
+                                    onChange={handleChange}
+                                    disabled={isLoading}
+                                />
+                                {errors.price && <p className={styles.error}>{errors.price}</p>}
+                            </div>
+
+                            <div className={styles.inputWrapper}>
+                                <input
+                                    type="text"
+                                    className={styles.input}
+                                    name="bedrooms"
+                                    placeholder="Bedrooms"
+                                    value={formData.bedrooms}
+                                    onChange={handleChange}
+                                    disabled={isLoading}
+                                />
+                                {errors.bedrooms && <p className={styles.error}>{errors.bedrooms}</p>}
+                            </div>
+
+                            <div className={styles.inputWrapper}>
+                                <input
+                                    type="text"
+                                    className={styles.input}
+                                    name="parking"
+                                    placeholder="Parking Lots"
+                                    value={formData.parking}
+                                    onChange={handleChange}
+                                    disabled={isLoading}
+                                />
+                                {errors.parking && <p className={styles.error}>{errors.parking}</p>}
+                            </div>
+
+                            <div className={styles.inputWrapper}>
+                                <input
+                                    type="text"
+                                    className={styles.input}
+                                    name="constructionSqft"
+                                    placeholder="Construction Sqft"
+                                    value={formData.constructionSqft}
+                                    onChange={handleChange}
+                                    disabled={isLoading}
+                                />
+                                {errors.constructionSqft && <p className={styles.error}>{errors.constructionSqft}</p>}
+                            </div>
+
+                            <div className={styles.inputWrapper}>
+                                <input
+                                    type="text"
+                                    className={styles.input}
+                                    name="landSqft"
+                                    placeholder="Land Sqft"
+                                    value={formData.landSqft}
+                                    onChange={handleChange}
+                                    disabled={isLoading}
+                                />
+                                {errors.landSqft && <p className={styles.error}>{errors.landSqft}</p>}
+                            </div>
+                        </div>
+
+                        <div className={styles.inputWrapper}>
+                            <textarea
+                                name="description"
+                                placeholder="Listing Description..."
+                                value={formData.description}
+                                onChange={handleChange}
+                                className={styles.textarea}
+                                disabled={isLoading}
+                            />
+                            {errors.description && <p className={styles.error}>{errors.description}</p>}
+                        </div>
+
+                        <h3 className={styles.subtitle}>Property Amenities</h3>
+                        <div className={styles.checkboxGroup}>
+                            {amenitiesList.map((amenity) => (
+                                <label key={amenity} className={styles.checkboxLabel}>
+                                    <input
+                                        type="checkbox"
+                                        checked={formData.amenities.includes(amenity)}
+                                        onChange={() => handleCheckbox(amenity)}
+                                        disabled={isLoading}
+                                    />
+                                    {amenity}
+                                </label>
+                            ))}
+                        </div>
+                        {errors.amenities && <p className={styles.error}>{errors.amenities}</p>}
+
+                        <button 
+                            className={styles.btnOrangeSubmit} 
+                            type="submit"
+                            disabled={isLoading}
+                        >
+                            {isLoading ? 'Submitting...' : 'Submit for approval'}
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <SuccessModal 
+                isOpen={showModal}
+                onClose={() => setShowModal(false)}
+                title="Property Submitted!"
+                message="Thank you for submitting your property! Our team will review your listing and contact you shortly for approval."
+            />
+        </>
     );
-};
-
+}
